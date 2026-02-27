@@ -1,7 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="text-center">
-    <h1 class="neon-text">500</h1>
-    <p>Error interno del servidor</p>
+
+<div class="text-center" style="padding: 5rem 1rem;">
+
+    <!-- Número grande de fondo (decorativo) -->
+    <div style="position:relative; display:inline-block; margin-bottom:1.5rem;">
+        <span style="
+            font-family:'Orbitron',sans-serif;
+            font-size:clamp(6rem,18vw,11rem);
+            font-weight:800;
+            color:transparent;
+            -webkit-text-stroke: 1.5px rgba(255,45,120,0.2);
+            line-height:1;
+            display:block;
+            letter-spacing:0.05em;
+            user-select:none;
+        ">500</span>
+        <span class="neon-text-pink" style="
+            font-family:'Orbitron',sans-serif;
+            font-size:clamp(6rem,18vw,11rem);
+            font-weight:800;
+            position:absolute;
+            top:0; left:0; right:0;
+            line-height:1;
+            letter-spacing:0.05em;
+            opacity:0.08;
+            filter:blur(18px);
+        ">500</span>
+    </div>
+
+    <!-- Badge -->
+    <div class="mb-3">
+        <span class="section-badge badge-pink">Error 500</span>
+    </div>
+
+    <h2 class="neon-text-pink mb-3" style="font-size:1.4rem;">Error interno del servidor</h2>
+
+    <p style="color:#7a7d99; font-family:'Exo 2',sans-serif; max-width:400px; margin:0 auto 2.5rem;">
+        Algo salió mal de nuestro lado. Ya estamos al tanto.<br>
+        Intenta de nuevo en unos momentos.
+    </p>
+
+    <a href="{{ url_for('home.index') }}" class="btn btn-neon-pink px-5 py-2">
+        ← Volver al inicio
+    </a>
+
 </div>
+
 {% endblock %}

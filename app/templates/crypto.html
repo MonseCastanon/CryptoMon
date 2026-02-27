@@ -1,76 +1,72 @@
 {% extends "base.html" %}
 {% block content %}
 
-<span class="section-label fade-up fade-up-1"><i class="bi bi-bar-chart-line me-1"></i>Mercado</span>
-<h2 class="neon-text mb-1 fade-up fade-up-1">Top Criptomonedas</h2>
-<p style="color: var(--text-muted); font-size:0.88rem;" class="mb-4 fade-up fade-up-1">
-    Datos en tiempo real via CoinGecko · Precios en USD
-</p>
+<!-- Header -->
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+    <div>
+        <span class="section-badge badge-cyan">Mercado en vivo</span>
+        <h2 class="neon-text mt-1" style="font-size:1.5rem;">Top Criptomonedas</h2>
+    </div>
+    <span style="font-family:'Orbitron',sans-serif; font-size:0.62rem; color:#7a7d99; letter-spacing:0.1em;">
+        DATOS VÍA COINGECKO API
+    </span>
+</div>
 
-<div class="table-responsive fade-up fade-up-2">
-    <table class="table align-middle">
+<!-- Tabla -->
+<div style="overflow-x:auto;">
+    <table class="table-crypto">
         <thead>
             <tr>
-                <th style="width:40px;">#</th>
-                <th>Nombre</th>
+                <th>#</th>
+                <th>Moneda</th>
                 <th>Precio (USD)</th>
+                <th>24h</th>
                 <th>Market Cap</th>
-                <th class="d-none d-md-table-cell">24h %</th>
             </tr>
         </thead>
         <tbody>
             {% for coin in cryptos %}
             <tr>
-                <td style="color: var(--text-muted); font-size:0.85rem;">
+                <!-- Rank -->
+                <td style="color:#7a7d99; font-family:'Orbitron',sans-serif; font-size:0.78rem; width:40px;">
                     {{ loop.index }}
                 </td>
+
+                <!-- Coin name + icon -->
                 <td>
-                    <div class="coin-name">
-                        {% if coin.image %}
-                        <img src="{{ coin.image }}" alt="{{ coin.name }}" class="coin-icon">
-                        {% endif %}
-                        <div>
-                            <span style="font-weight:600;">{{ coin.name }}</span>
-                            <span style="color: var(--text-muted); font-size:0.78rem; display:block; text-transform:uppercase;">
-                                {{ coin.symbol }}
-                            </span>
-                        </div>
-                    </div>
+                    {% if coin.image %}
+                    <img src="{{ coin.image }}" class="coin-icon" alt="{{ coin.name }}">
+                    {% endif %}
+                    <span style="font-weight:600; color:#e8eaf0;">{{ coin.name }}</span>
+                    <span style="color:#7a7d99; font-size:0.75rem; margin-left:0.4rem; font-family:'Orbitron',sans-serif;">
+                        {{ coin.symbol | upper }}
+                    </span>
                 </td>
-                <td style="font-family:'Syne'; font-weight:600; color:var(--purple-pale);">
-                    ${{ "{:,.2f}".format(coin.current_price) }}
-                </td>
-                <td style="color: var(--text-secondary); font-size:0.9rem;">
-                    ${{ "{:,.0f}".format(coin.market_cap) }}
-                </td>
-                <td class="d-none d-md-table-cell">
-                    {% if coin.price_change_percentage_24h %}
+
+                <!-- Price -->
+                <td class="coin-price">${{ "{:,.2f}".format(coin.current_price) }}</td>
+
+                <!-- 24h change (if available) -->
+                <td>
+                    {% if coin.price_change_percentage_24h is defined and coin.price_change_percentage_24h is not none %}
                         {% if coin.price_change_percentage_24h >= 0 %}
-                            <span style="color: #7ee7a4; font-weight:500;">
-                                <i class="bi bi-caret-up-fill me-1"></i>{{ "%.2f"|format(coin.price_change_percentage_24h) }}%
-                            </span>
+                            <span class="price-up">▲ {{ "%.2f"|format(coin.price_change_percentage_24h) }}%</span>
                         {% else %}
-                            <span style="color: #f87171; font-weight:500;">
-                                <i class="bi bi-caret-down-fill me-1"></i>{{ "%.2f"|format(coin.price_change_percentage_24h|abs) }}%
-                            </span>
+                            <span class="price-down">▼ {{ "%.2f"|format(coin.price_change_percentage_24h | abs) }}%</span>
                         {% endif %}
                     {% else %}
-                        <span style="color: var(--text-muted);">—</span>
+                        <span style="color:#7a7d99;">—</span>
                     {% endif %}
+                </td>
+
+                <!-- Market cap -->
+                <td class="market-cap">
+                    ${{ "{:,.0f}".format(coin.market_cap) }}
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-</div>
-
-<!-- Disclaimer -->
-<div class="guide-card mt-3 fade-up fade-up-3" style="border-left-color: var(--text-muted);">
-    <p style="font-size:0.82rem; color: var(--text-muted); margin:0;">
-        <i class="bi bi-info-circle me-1"></i>
-        Esta información es solo referencial. Los precios del mercado cripto cambian en segundos.
-        No constituye asesoramiento financiero.
-    </p>
 </div>
 
 {% endblock %}

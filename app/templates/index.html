@@ -1,178 +1,190 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- ══ HERO ══ -->
-<div class="hero-banner fade-up fade-up-1">
-    <div class="row align-items-center g-4">
-        <div class="col-md-7">
-            <span class="section-label">
-                <i class="bi bi-activity me-1"></i>Mercados en tiempo real
-            </span>
-            <h1 class="mb-3" style="font-size:2.2rem; line-height:1.2;">
-                Explora el mundo de las
-                <span class="neon-text">criptomonedas</span>
-            </h1>
-            <p style="color: var(--text-secondary); font-size:1rem; max-width:480px;">
-                Información clara, noticias actualizadas y recursos para que tomes
-                decisiones con conocimiento real del mercado digital.
-            </p>
-            <div class="d-flex flex-wrap gap-2 mt-3">
-                <a href="{{ url_for('crypto.crypto_dashboard') }}" class="btn-purple btn">
-                    Ver Top Criptos <i class="bi bi-arrow-right ms-1"></i>
-                </a>
-                <a href="#que-es" class="btn-outline-purple btn">
-                    ¿Cómo empezar?
-                </a>
-            </div>
+<!-- ===== HERO ===== -->
+<div class="row align-items-center mb-5" style="min-height:340px;">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+        <p class="mb-2" style="font-family:'Orbitron',sans-serif; font-size:0.62rem; letter-spacing:0.2em; color:#39ff14; text-shadow:0 0 8px #39ff14,0 0 20px rgba(57,255,20,0.4); text-transform:uppercase;">
+            — Bienvenido a CryptoApp
+        </p>
+        <h1 class="neon-text mb-3" style="font-size:clamp(1.8rem,4vw,2.8rem); line-height:1.2;">
+            El mundo crypto<br>al alcance de tu mano
+        </h1>
+        <p style="color:#a0a3bc; font-size:1rem; max-width:480px;">
+            Explora precios en tiempo real, aprende desde cero y toma decisiones
+            informadas con nuestra guía definitiva sobre criptomonedas.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="{{ url_for('crypto.crypto_dashboard') }}" class="btn btn-neon-cyan btn-sm px-4 py-2">
+                Ver Top Criptos
+            </a>
+            <a href="#guia" class="btn btn-neon-green btn-sm px-4 py-2">
+                Empezar a aprender
+            </a>
         </div>
-        <div class="col-md-5">
-            <img src="{{ url_for('static', filename='images/hero.jpg') }}"
-                 class="img-fluid"
-                 style="border: 1px solid var(--border-subtle); box-shadow: var(--glow-md);"
-                 alt="Criptomonedas">
-        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <img src="{{ url_for('static', filename='images/hero_crypto.jpg') }}"
+             class="img-fluid"
+             style="border:1px solid rgba(0,247,255,0.15); box-shadow:0 0 30px rgba(0,247,255,0.12);"
+             alt="Criptomonedas">
     </div>
 </div>
 
-<!-- ══ STATS ROW ══ -->
-<div class="row g-3 mb-5 fade-up fade-up-2">
-    <div class="col-6 col-md-3">
-        <div class="stat-box">
-            <span class="value">20K+</span>
-            <span class="label">Criptomonedas activas</span>
-        </div>
-    </div>
-    <div class="col-6 col-md-3">
-        <div class="stat-box">
-            <span class="value">$2T+</span>
-            <span class="label">Capitalización global</span>
-        </div>
-    </div>
-    <div class="col-6 col-md-3">
-        <div class="stat-box">
-            <span class="value">24/7</span>
-            <span class="label">Mercado abierto</span>
-        </div>
-    </div>
-    <div class="col-6 col-md-3">
-        <div class="stat-box">
-            <span class="value">600M</span>
-            <span class="label">Usuarios en el mundo</span>
-        </div>
-    </div>
-</div>
+<hr class="neon-divider">
 
-<!-- ══ ¿QUÉ ES UNA CRIPTOMONEDA? ══ -->
-<section id="que-es" class="mb-5 fade-up fade-up-3">
-    <span class="section-label"><i class="bi bi-question-circle me-1"></i>Fundamentos</span>
-    <h2 class="neon-text mb-4">¿Qué es una criptomoneda?</h2>
+<!-- ===== ¿QUÉ ES UNA CRIPTOMONEDA? ===== -->
+<section id="guia" class="mb-5">
+    <div class="mb-4">
+        <span class="section-badge badge-cyan">Fundamentos</span>
+        <h2 class="neon-text mt-1" style="font-size:1.5rem;">¿Qué es una criptomoneda?</h2>
+    </div>
 
     <div class="row g-4">
         <div class="col-md-6">
-            <p style="color: var(--text-secondary);">
-                Una criptomoneda es una moneda digital descentralizada que utiliza
-                <strong style="color: var(--purple-light);">criptografía</strong>
-                para asegurar las transacciones y controlar la creación de nuevas unidades.
-                A diferencia del dinero tradicional, no está respaldada por ningún gobierno ni institución central.
-            </p>
-            <p style="color: var(--text-secondary);">
-                Toda transacción queda registrada en una cadena de bloques pública llamada
-                <strong style="color: var(--purple-light);">blockchain</strong>,
-                un libro contable inmutable, transparente y distribuido entre miles de nodos en el mundo.
-            </p>
+            <div class="info-card ic-cyan">
+                <span class="info-icon">🔗</span>
+                <h5 class="neon-text" style="font-size:0.95rem;">Dinero digital descentralizado</h5>
+                <p style="color:#a0a3bc; font-size:0.88rem;">
+                    Una criptomoneda es una forma de dinero digital que funciona sin bancos
+                    ni gobiernos. Se basa en tecnología <strong style="color:#e8eaf0;">blockchain</strong>:
+                    una cadena de bloques distribuida que registra cada transacción de forma
+                    pública, permanente y a prueba de manipulaciones.
+                </p>
+            </div>
         </div>
+
         <div class="col-md-6">
-            <div class="guide-card">
-                <div class="icon-circle"><i class="bi bi-shield-lock" style="color: var(--purple-pale);"></i></div>
-                <h5>Descentralización</h5>
-                <p>No depende de bancos ni gobiernos. Las reglas las define el protocolo y la comunidad.</p>
+            <div class="info-card ic-green">
+                <span class="info-icon">🌍</span>
+                <h5 class="neon-text-green" style="font-size:0.95rem;">Sin fronteras ni intermediarios</h5>
+                <p style="color:#a0a3bc; font-size:0.88rem;">
+                    Puedes enviar valor a cualquier persona en el mundo en minutos,
+                    sin necesidad de un banco. La red valida las transacciones mediante
+                    mecanismos como <strong style="color:#e8eaf0;">Proof of Work</strong> o
+                    <strong style="color:#e8eaf0;">Proof of Stake</strong>.
+                </p>
             </div>
-            <div class="guide-card">
-                <div class="icon-circle"><i class="bi bi-link-45deg" style="color: var(--purple-pale);"></i></div>
-                <h5>Blockchain</h5>
-                <p>Cada bloque contiene transacciones verificadas y encadenadas criptográficamente.</p>
+        </div>
+
+        <div class="col-md-6">
+            <div class="info-card ic-pink">
+                <span class="info-icon">📊</span>
+                <h5 class="neon-text-pink" style="font-size:0.95rem;">Oferta limitada = escasez</h5>
+                <p style="color:#a0a3bc; font-size:0.88rem;">
+                    Muchas criptos, como Bitcoin, tienen un suministro máximo fijo
+                    (21 millones de BTC). Esta escasez programada es uno de los factores
+                    que influye en su valor, a diferencia de las monedas tradicionales
+                    que pueden imprimirse sin límite.
+                </p>
             </div>
-            <div class="guide-card">
-                <div class="icon-circle"><i class="bi bi-globe" style="color: var(--purple-pale);"></i></div>
-                <h5>Accesibilidad global</h5>
-                <p>Cualquier persona con internet puede enviar o recibir criptomonedas sin intermediarios.</p>
+        </div>
+
+        <div class="col-md-6">
+            <div class="info-card ic-yellow">
+                <span class="info-icon">⚡</span>
+                <h5 class="neon-text-yellow" style="font-size:0.95rem;">Alta volatilidad</h5>
+                <p style="color:#a0a3bc; font-size:0.88rem;">
+                    El precio puede subir o bajar un 20–50 % en días o incluso horas.
+                    Esta volatilidad crea oportunidades, pero también riesgos considerables.
+                    Entender esto es el primer paso para operar con responsabilidad.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══ CÓMO INICIAR ══ -->
-<section class="mb-5 fade-up fade-up-4">
-    <span class="section-label"><i class="bi bi-rocket me-1"></i>Primeros pasos</span>
-    <h2 class="neon-text mb-4">¿Cómo iniciar en criptomonedas?</h2>
+<hr class="neon-divider">
+
+<!-- ===== ¿CÓMO INICIAR? ===== -->
+<section class="mb-5">
+    <div class="mb-4">
+        <span class="section-badge badge-green">Primeros pasos</span>
+        <h2 class="neon-text-green mt-1" style="font-size:1.5rem;">¿Cómo iniciar?</h2>
+    </div>
 
     <div class="row g-3">
 
+        <!-- Paso 1 -->
         <div class="col-md-4">
-            <div class="card p-3 h-100">
-                <div class="icon-circle"><span style="font-family:'Syne'; font-weight:800; color:var(--purple-pale);">01</span></div>
-                <h5 style="font-size:0.97rem;">Educarte primero</h5>
-                <p class="card-body p-0" style="font-size:0.88rem;">
-                    Antes de invertir un solo peso, dedica semanas (o meses) a entender
-                    cómo funciona Bitcoin, Ethereum y el mercado en general.
-                    Las secciones de este sitio son un buen punto de partida.
+            <div class="info-card ic-green" style="position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0.8rem; right:1rem; font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:800; color:rgba(57,255,20,0.08); line-height:1;">01</div>
+                <span class="info-icon">📚</span>
+                <h6 class="neon-text-green" style="font-size:0.88rem; letter-spacing:0.04em;">Educarte primero</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    Antes de invertir un solo peso, aprende qué es blockchain,
+                    cómo funcionan las wallets y qué diferencia a Bitcoin de Ethereum.
+                    El conocimiento es tu mejor activo.
                 </p>
             </div>
         </div>
 
+        <!-- Paso 2 -->
         <div class="col-md-4">
-            <div class="card p-3 h-100">
-                <div class="icon-circle"><span style="font-family:'Syne'; font-weight:800; color:var(--purple-pale);">02</span></div>
-                <h5 style="font-size:0.97rem;">Elegir un exchange confiable</h5>
-                <p class="card-body p-0" style="font-size:0.88rem;">
-                    Registrate en plataformas reconocidas como Binance, Coinbase o Kraken.
-                    Activa siempre la autenticación de dos factores (2FA) desde el primer día.
+            <div class="info-card ic-cyan" style="position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0.8rem; right:1rem; font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:800; color:rgba(0,247,255,0.06); line-height:1;">02</div>
+                <span class="info-icon">🏦</span>
+                <h6 class="neon-text" style="font-size:0.88rem; letter-spacing:0.04em;">Elegir un exchange</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    Regístrate en un exchange reconocido (Binance, Coinbase, Kraken).
+                    Verifica tu identidad (KYC) y activa la autenticación de dos factores
+                    para proteger tu cuenta.
                 </p>
             </div>
         </div>
 
+        <!-- Paso 3 -->
         <div class="col-md-4">
-            <div class="card p-3 h-100">
-                <div class="icon-circle"><span style="font-family:'Syne'; font-weight:800; color:var(--purple-pale);">03</span></div>
-                <h5 style="font-size:0.97rem;">Empezar con poco</h5>
-                <p class="card-body p-0" style="font-size:0.88rem;">
-                    Comienza con una cantidad pequeña que no afecte tu economía.
-                    El objetivo inicial es aprender cómo funciona el mercado, no enriquecerte rápido.
+            <div class="info-card ic-yellow" style="position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0.8rem; right:1rem; font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:800; color:rgba(255,230,0,0.06); line-height:1;">03</div>
+                <span class="info-icon">💰</span>
+                <h6 class="neon-text-yellow" style="font-size:0.88rem; letter-spacing:0.04em;">Invertir con cabeza</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    Empieza con una cantidad pequeña que estés dispuesto a perder
+                    por completo. No uses ahorros de emergencia ni deudas para
+                    entrar al mercado crypto.
                 </p>
             </div>
         </div>
 
+        <!-- Paso 4 -->
         <div class="col-md-4">
-            <div class="card p-3 h-100">
-                <div class="icon-circle"><span style="font-family:'Syne'; font-weight:800; color:var(--purple-pale);">04</span></div>
-                <h5 style="font-size:0.97rem;">Crear una wallet segura</h5>
-                <p class="card-body p-0" style="font-size:0.88rem;">
-                    Si planeas guardar criptomonedas a largo plazo, considera una wallet fría
-                    (hardware wallet) como Ledger o Trezor. Nunca compartas tu seed phrase.
+            <div class="info-card ic-pink" style="position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0.8rem; right:1rem; font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:800; color:rgba(255,45,120,0.06); line-height:1;">04</div>
+                <span class="info-icon">🔐</span>
+                <h6 class="neon-text-pink" style="font-size:0.88rem; letter-spacing:0.04em;">Proteger tus activos</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    Considera una wallet de hardware (Ledger, Trezor) para guardar
+                    cantidades significativas. Recuerda: "not your keys, not your coins".
                 </p>
             </div>
         </div>
 
+        <!-- Paso 5 -->
         <div class="col-md-4">
-            <div class="card p-3 h-100">
-                <div class="icon-circle"><span style="font-family:'Syne'; font-weight:800; color:var(--purple-pale);">05</span></div>
-                <h5 style="font-size:0.97rem;">Diversificar con cabeza</h5>
-                <p class="card-body p-0" style="font-size:0.88rem;">
-                    No pongas todo en una sola moneda. Bitcoin y Ethereum son los de mayor
-                    capitalización y menor riesgo relativo. Las altcoins pueden ofrecer más
-                    rendimiento, pero también mucho más riesgo.
+            <div class="info-card ic-orange" style="position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0.8rem; right:1rem; font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:800; color:rgba(255,107,26,0.06); line-height:1;">05</div>
+                <span class="info-icon">📈</span>
+                <h6 style="font-size:0.88rem; letter-spacing:0.04em; color:#ff6b1a; text-shadow:0 0 8px #ff6b1a;">Diversificar</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    No concentres todo en una sola moneda. Distribuye entre
+                    proyectos consolidados (BTC, ETH) y, si decides, una pequeña
+                    parte en altcoins con mayor riesgo/beneficio.
                 </p>
             </div>
         </div>
 
+        <!-- Paso 6 -->
         <div class="col-md-4">
-            <div class="card p-3 h-100">
-                <div class="icon-circle"><span style="font-family:'Syne'; font-weight:800; color:var(--purple-pale);">06</span></div>
-                <h5 style="font-size:0.97rem;">Llevar registro de todo</h5>
-                <p class="card-body p-0" style="font-size:0.88rem;">
-                    Documenta cada operación: precio de compra, precio de venta, fees y
-                    rendimiento. Esto es fundamental para gestionar impuestos y evaluar
-                    tu desempeño con objetividad.
+            <div class="info-card ic-green" style="position:relative; overflow:hidden;">
+                <div style="position:absolute; top:0.8rem; right:1rem; font-family:'Orbitron',sans-serif; font-size:2rem; font-weight:800; color:rgba(57,255,20,0.06); line-height:1;">06</div>
+                <span class="info-icon">🕐</span>
+                <h6 class="neon-text-green" style="font-size:0.88rem; letter-spacing:0.04em;">Pensar a largo plazo</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    El HODL (hold on for dear life) ha demostrado ser más efectivo
+                    que el trading activo para la mayoría de inversores. Paciencia
+                    y horizonte temporal son claves.
                 </p>
             </div>
         </div>
@@ -180,124 +192,109 @@
     </div>
 </section>
 
-<!-- ══ CONSEJOS CLAVE ══ -->
+<hr class="neon-divider">
+
+<!-- ===== CONSEJOS IMPORTANTES ===== -->
 <section class="mb-5">
-    <span class="section-label"><i class="bi bi-lightbulb me-1"></i>Mentalidad del inversor</span>
-    <h2 class="neon-text mb-4">Consejos que nadie te dice</h2>
+    <div class="mb-4">
+        <span class="section-badge badge-pink">Mentalidad del inversor</span>
+        <h2 class="neon-text-pink mt-1" style="font-size:1.5rem;">Consejos que nadie te dice</h2>
+    </div>
 
     <div class="row g-4">
-        <!-- Consejo capital -->
-        <div class="col-md-12">
-            <div class="guide-card" style="border-left-color: var(--purple-pale); background: rgba(107,53,196,0.18);">
-                <h5 style="font-size:1.05rem; color: var(--purple-pale);">
-                    <i class="bi bi-exclamation-triangle me-2"></i>
-                    Invierte solo lo que estás dispuesto a perder completamente
-                </h5>
-                <p style="font-size:0.92rem;">
-                    Esta no es una frase de manual: es la regla más importante del mercado cripto.
-                    Antes de hacer cualquier transferencia, hazte la pregunta honesta:
-                    <em style="color: var(--purple-light);">"¿Podría perder este dinero y seguir con mi vida normal?"</em>
-                    Si la respuesta es no, ese dinero no debería entrar al mercado.
-                    Las criptomonedas pueden caer 50%, 70% o incluso 90% en cuestión de semanas.
-                    Nunca uses ahorros de emergencia, dinero para renta, comida ni deudas.
+
+        <div class="col-lg-6">
+            <div class="info-card ic-pink">
+                <span class="info-icon">⚠️</span>
+                <h5 class="neon-text-pink" style="font-size:1rem;">Solo invierte lo que puedes perder</h5>
+                <p style="color:#a0a3bc; font-size:0.88rem;">
+                    Esta es la regla de oro del mercado crypto. Antes de mover dinero,
+                    hazte esta pregunta: <em style="color:#e8eaf0;">"¿Podría perder el 100 % de esto
+                    y seguir pagando mis gastos normalmente?"</em>. Si la respuesta es no,
+                    reduce la cantidad hasta que sí lo sea. El mercado no conoce tus
+                    necesidades personales ni tu fecha límite.
                 </p>
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="guide-card">
-                <h5><i class="bi bi-graph-down me-2"></i>No siempre se gana</h5>
-                <p>
-                    Los traders profesionales con años de experiencia tienen rachas perdedoras.
-                    El mercado es volátil e impredecible. Aceptar que las pérdidas son parte
-                    del proceso es lo que separa a los inversores que duran de los que quiebran.
+        <div class="col-lg-6">
+            <div class="info-card ic-yellow">
+                <span class="info-icon">📉</span>
+                <h5 class="neon-text-yellow" style="font-size:1rem;">No siempre se gana</h5>
+                <p style="color:#a0a3bc; font-size:0.88rem;">
+                    Las redes sociales solo muestran ganancias. En la realidad,
+                    la mayoría de los traders activos terminan perdiendo dinero.
+                    Las caídas del 50–80 % en mercados bajistas (bear market) son completamente
+                    normales e históricas. Prepararte psicológicamente para ellas
+                    es tan importante como cualquier análisis técnico.
                 </p>
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="guide-card">
-                <h5><i class="bi bi-emoji-dizzy me-2"></i>El FOMO es tu peor enemigo</h5>
-                <p>
-                    "Fear of Missing Out": la urgencia de comprar cuando todo sube porque
-                    sientes que se te va el tren. Históricamente, comprar en euforia máxima
-                    es la forma más segura de perder dinero. Cuando todos hablan de cripto
-                    en la cena familiar, suele ser señal de techo.
+        <div class="col-lg-4">
+            <div class="info-card ic-cyan">
+                <span class="info-icon">🚫</span>
+                <h6 class="neon-text" style="font-size:0.9rem;">Cuidado con el FOMO</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    El "Fear of Missing Out" es el principal enemigo del inversor.
+                    Comprar cuando todos gritan "¡al alza!" suele ser el momento
+                    justo antes de una corrección fuerte.
                 </p>
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="guide-card">
-                <h5><i class="bi bi-search me-2"></i>Haz tu propia investigación (DYOR)</h5>
-                <p>
-                    "Do Your Own Research". No inviertas basándote en consejos de redes sociales,
-                    influencers ni grupos de Telegram que prometen ganancias seguras.
-                    Lee el whitepaper del proyecto, entiende qué problema resuelve y quién
-                    está detrás.
+        <div class="col-lg-4">
+            <div class="info-card ic-orange">
+                <span class="info-icon">🎯</span>
+                <h6 style="color:#ff6b1a; text-shadow:0 0 8px #ff6b1a; font-size:0.9rem;">Define tu estrategia</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    ¿Eres trader de corto plazo o inversor a largo plazo?
+                    Mezclar estrategias sin plan es la receta perfecta para perder.
+                    Elige una y apégate a ella.
                 </p>
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="guide-card">
-                <h5><i class="bi bi-clock-history me-2"></i>El tiempo en el mercado vence al timing</h5>
-                <p>
-                    Intentar adivinar el mejor momento para entrar o salir generalmente
-                    resulta en pérdidas. Una estrategia de compra periódica (DCA —
-                    Dollar Cost Averaging) ha demostrado mejores resultados para la
-                    mayoría de inversores a largo plazo.
+        <div class="col-lg-4">
+            <div class="info-card ic-green">
+                <span class="info-icon">🔍</span>
+                <h6 class="neon-text-green" style="font-size:0.9rem;">Haz tu propia investigación</h6>
+                <p style="color:#a0a3bc; font-size:0.83rem; margin:0;">
+                    DYOR (Do Your Own Research). Nunca bases decisiones financieras
+                    en consejos de influencers o grupos de Telegram. Lee whitepapers
+                    y analiza los equipos detrás de cada proyecto.
                 </p>
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="guide-card">
-                <h5><i class="bi bi-eye-slash me-2"></i>Cuidado con las estafas</h5>
-                <p>
-                    Si algo promete rendimientos garantizados, es una estafa. Sin excepción.
-                    Los esquemas Ponzi, los rug pulls y los proyectos fraudulentos han
-                    causado pérdidas de miles de millones. Verifica siempre contratos,
-                    auditorías y equipos.
-                </p>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="guide-card">
-                <h5><i class="bi bi-heart-pulse me-2"></i>Cuida tu salud mental</h5>
-                <p>
-                    Ver tu portafolio bajar 40% en un día puede generar ansiedad real.
-                    Define de antemano cuánto estás dispuesto a perder y fija alertas
-                    de precio. Evita revisar el mercado cada hora: el estrés constante
-                    lleva a malas decisiones.
-                </p>
-            </div>
-        </div>
     </div>
 </section>
 
-<!-- ══ VIDEOS RECOMENDADOS ══ -->
-<section class="mb-5">
-    <span class="section-label"><i class="bi bi-play-circle me-1"></i>Recursos</span>
-    <h2 class="neon-text mb-4">Videos recomendados</h2>
+<hr class="neon-divider">
 
-    <div class="row g-3">
+<!-- ===== VIDEOS RECOMENDADOS ===== -->
+<section class="mb-2">
+    <div class="mb-4">
+        <span class="section-badge badge-cyan">Aprende más</span>
+        <h2 class="neon-text mt-1" style="font-size:1.5rem;">Videos recomendados</h2>
+    </div>
+
+    <div class="row g-4">
         {% if videos %}
             {% for video in videos %}
-            <div class="col-md-6">
-                <iframe width="100%" height="220"
-                        src="https://www.youtube.com/embed/{{ video.id.videoId }}"
-                        class="mb-1"
-                        allowfullscreen>
-                </iframe>
+            <div class="col-md-6 col-lg-4">
+                <div style="border-radius:10px; overflow:hidden; border:1px solid rgba(0,247,255,0.12);">
+                    <iframe width="100%" height="200"
+                            src="https://www.youtube.com/embed/{{ video.id.videoId }}"
+                            allowfullscreen
+                            style="display:block; border:none;">
+                    </iframe>
+                </div>
             </div>
             {% endfor %}
         {% else %}
             <div class="col-12">
-                <div class="guide-card">
-                    <p><i class="bi bi-info-circle me-2"></i>No se pudieron cargar los videos en este momento.</p>
-                </div>
+                <p style="color:#7a7d99;">No se pudieron cargar los videos.</p>
             </div>
         {% endif %}
     </div>
