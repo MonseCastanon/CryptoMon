@@ -5,7 +5,7 @@ videos_bp = Blueprint("videos", __name__, url_prefix="/videos")
 
 @videos_bp.route("/", methods=["GET"])
 def videos():
-    query = request.args.get("q", "cryptocurrency news")
+    query = request.args.get("q", "análisis bitcoin en vivo español esta semana")
 
     results = search_videos(query=query)
 

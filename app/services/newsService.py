@@ -10,7 +10,7 @@ def get_crypto_news():
         params = {
             "q": "cryptocurrency",
             "apiKey": api_key,
-            "language": "en",
+            "language": "es",
             "pageSize": 5,
             "sortBy": "publishedAt"
         }

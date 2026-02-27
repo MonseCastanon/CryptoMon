@@ -2,7 +2,7 @@ import requests
 from flask import current_app
 
 def get_crypto_videos(max_results=4):
-    return search_videos("cryptocurrency news", max_results)
+    return search_videos("análisis bitcoin en vivo español esta semana", max_results)
 
 
 def search_videos(query, max_results=6):

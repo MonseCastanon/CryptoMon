@@ -99,7 +99,7 @@ SECRET_KEY=una_clave_secreta
 
 La interfaz usa una paleta neón con fondo oscuro donde cada sección tiene su propio color de acento:
 
-- 🔵 **Cyan** `#00f7ff` — navegación y precios
+- 🔵 **Purple** `#00f7ff` — navegación y precios
 - 🟢 **Verde neón** `#39ff14` — pasos y videos
 - 🔴 **Pink** `#ff2d78` — advertencias y noticias
 - 🟡 **Amarillo** `#ffe600` — datos de mercado
