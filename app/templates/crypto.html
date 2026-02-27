@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+
+<span class="section-label fade-up fade-up-1"><i class="bi bi-bar-chart-line me-1"></i>Mercado</span>
+<h2 class="neon-text mb-1 fade-up fade-up-1">Top Criptomonedas</h2>
+<p style="color: var(--text-muted); font-size:0.88rem;" class="mb-4 fade-up fade-up-1">
+    Datos en tiempo real via CoinGecko · Precios en USD
+</p>
+
+<div class="table-responsive fade-up fade-up-2">
+    <table class="table align-middle">
+        <thead>
+            <tr>
+                <th style="width:40px;">#</th>
+                <th>Nombre</th>
+                <th>Precio (USD)</th>
+                <th>Market Cap</th>
+                <th class="d-none d-md-table-cell">24h %</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for coin in cryptos %}
+            <tr>
+                <td style="color: var(--text-muted); font-size:0.85rem;">
+                    {{ loop.index }}
+                </td>
+                <td>
+                    <div class="coin-name">
+                        {% if coin.image %}
+                        <img src="{{ coin.image }}" alt="{{ coin.name }}" class="coin-icon">
+                        {% endif %}
+                        <div>
+                            <span style="font-weight:600;">{{ coin.name }}</span>
+                            <span style="color: var(--text-muted); font-size:0.78rem; display:block; text-transform:uppercase;">
+                                {{ coin.symbol }}
+                            </span>
+                        </div>
+                    </div>
+                </td>
+                <td style="font-family:'Syne'; font-weight:600; color:var(--purple-pale);">
+                    ${{ "{:,.2f}".format(coin.current_price) }}
+                </td>
+                <td style="color: var(--text-secondary); font-size:0.9rem;">
+                    ${{ "{:,.0f}".format(coin.market_cap) }}
+                </td>
+                <td class="d-none d-md-table-cell">
+                    {% if coin.price_change_percentage_24h %}
+                        {% if coin.price_change_percentage_24h >= 0 %}
+                            <span style="color: #7ee7a4; font-weight:500;">
+                                <i class="bi bi-caret-up-fill me-1"></i>{{ "%.2f"|format(coin.price_change_percentage_24h) }}%
+                            </span>
+                        {% else %}
+                            <span style="color: #f87171; font-weight:500;">
+                                <i class="bi bi-caret-down-fill me-1"></i>{{ "%.2f"|format(coin.price_change_percentage_24h|abs) }}%
+                            </span>
+                        {% endif %}
+                    {% else %}
+                        <span style="color: var(--text-muted);">—</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Disclaimer -->
+<div class="guide-card mt-3 fade-up fade-up-3" style="border-left-color: var(--text-muted);">
+    <p style="font-size:0.82rem; color: var(--text-muted); margin:0;">
+        <i class="bi bi-info-circle me-1"></i>
+        Esta información es solo referencial. Los precios del mercado cripto cambian en segundos.
+        No constituye asesoramiento financiero.
+    </p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ══ HEADER ══ -->
+<div class="row align-items-center mb-5 fade-up fade-up-1">
+    <div class="col-auto">
+        <div style="position:relative; display:inline-block;">
+            <img src="https://via.placeholder.com/150"
+                 class="profile-avatar"
+                 width="110" height="110"
+                 alt="Monse">
+            <!-- Status dot -->
+            <span style="
+                position:absolute; bottom:6px; right:6px;
+                width:14px; height:14px; border-radius:50%;
+                background: #7ee7a4;
+                border: 2.5px solid var(--purple-deep);
+                box-shadow: 0 0 8px rgba(126,231,164,0.7);
+            "></span>
+        </div>
+    </div>
+    <div class="col">
+        <span class="section-label">Portfolio</span>
+        <h1 style="font-size:2rem; margin-bottom:0.2rem;">Monse</h1>
+        <p style="color: var(--purple-light); font-size:0.95rem; font-weight:500; margin-bottom:0;">
+            Backend Developer · Fintech &amp; Blockchain Enthusiast
+        </p>
+    </div>
+</div>
+
+<!-- ══ BIO + STATS ══ -->
+<div class="row g-4 mb-5 fade-up fade-up-2">
+
+    <div class="col-md-7">
+        <div class="card p-4 h-100">
+            <span class="section-label mb-2"><i class="bi bi-person-lines-fill me-1"></i>Sobre mí</span>
+            <p style="color: var(--text-secondary); font-size:0.95rem;">
+                Desarrolladora backend con foco en <strong style="color:var(--purple-light);">arquitectura limpia</strong>
+                y sistemas bien estructurados. Apasionada por la intersección entre tecnología y finanzas:
+                creo que el código bien escrito puede cambiar la forma en que las personas se relacionan con el dinero.
+            </p>
+            <p style="color: var(--text-secondary); font-size:0.95rem;">
+                Este proyecto nació de esa curiosidad: un espacio para explorar criptomonedas de forma clara,
+                sin promesas vacías ni ruido de redes sociales. Solo datos, contexto y herramientas útiles.
+            </p>
+            <p style="color: var(--text-secondary); font-size:0.95rem; margin-bottom:0;">
+                Construido con <strong style="color:var(--purple-light);">Python + Flask</strong>,
+                conectado a APIs reales (CoinGecko, NewsAPI, YouTube) y diseñado
+                para que cualquier persona pueda dar su primer paso en el mundo cripto con información sólida.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="row g-3 h-100">
+            <div class="col-6">
+                <div class="stat-box h-100">
+                    <span class="value">3+</span>
+                    <span class="label">APIs integradas</span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="stat-box h-100">
+                    <span class="value">Flask</span>
+                    <span class="label">Framework backend</span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card p-3">
+                    <span class="section-label mb-2">Valores del proyecto</span>
+                    <div>
+                        <span class="tip-badge"><i class="bi bi-check2 me-1"></i>Transparencia</span>
+                        <span class="tip-badge"><i class="bi bi-check2 me-1"></i>Educación</span>
+                        <span class="tip-badge"><i class="bi bi-check2 me-1"></i>Sin FOMO</span>
+                        <span class="tip-badge"><i class="bi bi-check2 me-1"></i>Código limpio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ══ STACK TÉCNICO ══ -->
+<section class="mb-5 fade-up fade-up-3">
+    <span class="section-label mb-3 d-block"><i class="bi bi-code-slash me-1"></i>Stack tecnológico</span>
+
+    <div class="row g-3">
+
+        <div class="col-md-4">
+            <div class="guide-card">
+                <div class="icon-circle"><i class="bi bi-server" style="color:var(--purple-pale);"></i></div>
+                <h5>Backend</h5>
+                <p>
+                    Python · Flask · Jinja2 · Blueprints · Clean Architecture
+                </p>
+                <div class="mt-2">
+                    <span class="profile-badge">Python</span>
+                    <span class="profile-badge">Flask</span>
+                    <span class="profile-badge">Jinja2</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="guide-card">
+                <div class="icon-circle"><i class="bi bi-layout-text-window" style="color:var(--purple-pale);"></i></div>
+                <h5>Frontend</h5>
+                <p>
+                    Bootstrap 5 · CSS personalizado · Diseño responsivo
+                </p>
+                <div class="mt-2">
+                    <span class="profile-badge">Bootstrap 5</span>
+                    <span class="profile-badge">CSS3</span>
+                    <span class="profile-badge">HTML5</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="guide-card">
+                <div class="icon-circle"><i class="bi bi-plug" style="color:var(--purple-pale);"></i></div>
+                <h5>APIs externas</h5>
+                <p>
+                    CoinGecko · NewsAPI · YouTube Data API v3
+                </p>
+                <div class="mt-2">
+                    <span class="profile-badge">CoinGecko</span>
+                    <span class="profile-badge">NewsAPI</span>
+                    <span class="profile-badge">YouTube</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══ HABILIDADES ══ -->
+<section class="mb-5 fade-up fade-up-4">
+    <span class="section-label mb-3 d-block"><i class="bi bi-stars me-1"></i>Áreas de enfoque</span>
+
+    <div class="row g-3">
+        <div class="col-6 col-md-3">
+            <div class="stat-box">
+                <div class="icon-circle mx-auto" style="margin-bottom:0.6rem;">
+                    <i class="bi bi-diagram-3" style="color:var(--purple-pale);"></i>
+                </div>
+                <span class="label">Arquitectura limpia</span>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-box">
+                <div class="icon-circle mx-auto" style="margin-bottom:0.6rem;">
+                    <i class="bi bi-currency-bitcoin" style="color:var(--purple-pale);"></i>
+                </div>
+                <span class="label">Sistemas financieros</span>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-box">
+                <div class="icon-circle mx-auto" style="margin-bottom:0.6rem;">
+                    <i class="bi bi-link-45deg" style="color:var(--purple-pale);"></i>
+                </div>
+                <span class="label">Blockchain</span>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="stat-box">
+                <div class="icon-circle mx-auto" style="margin-bottom:0.6rem;">
+                    <i class="bi bi-terminal" style="color:var(--purple-pale);"></i>
+                </div>
+                <span class="label">APIs &amp; Integraciones</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══ CONTACTO ══ -->
+<section class="mb-4 fade-up fade-up-4">
+    <span class="section-label mb-3 d-block"><i class="bi bi-send me-1"></i>Contacto</span>
+    <div class="d-flex flex-wrap gap-2">
+        <a href="https://github.com/" target="_blank" rel="noopener" class="social-link">
+            <i class="bi bi-github" style="color:var(--purple-pale);"></i>
+            GitHub
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-link">
+            <i class="bi bi-linkedin" style="color:var(--purple-pale);"></i>
+            LinkedIn
+        </a>
+        <a href="mailto:correo@ejemplo.com" class="social-link">
+            <i class="bi bi-envelope" style="color:var(--purple-pale);"></i>
+            Email
+        </a>
+    </div>
+</section>
+
+{% endblock %}
